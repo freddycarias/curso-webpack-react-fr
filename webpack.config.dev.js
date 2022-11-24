@@ -34,11 +34,11 @@ module.exports = {
             //extension de css
             {
                 test: /\.(sa|sc|c)ss$/i,
-                use: [
-                MiniCssExtractPlugin.loader,
-                'css-loader',
-                'sass-loader'
-                ]
+                    use: [
+                        "style-loader",
+                        "css-loader",
+                        "sass-loader"
+                    ]
             }
         ]
     },
