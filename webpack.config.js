@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const { cleanWebpackPlugin } = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
     entry: "./src/index.js",
@@ -25,7 +25,7 @@ module.exports = {
         rules: [
             //extension de js y jsx
             {
-                test: /\.js$|jsx/,
+                test: /\.js|jsx$/,
                 exclude: / node_modules /,
                 use: {
                     loader: "babel-loader"
@@ -57,7 +57,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css"
         }),
-        new cleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
     ],
     optimization: {
         minimize: true,

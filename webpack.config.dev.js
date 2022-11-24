@@ -18,7 +18,7 @@ module.exports = {
         rules: [
             //extension de js y jsx
             {
-                test: /\.js$|jsx/,
+                test: /\.js|jsx$/,
                 exclude: / node_modules /,
                 use: {
                     loader: "babel-loader"
@@ -34,11 +34,11 @@ module.exports = {
             //extension de css
             {
                 test: /\.(sa|sc|c)ss$/i,
-                    use: [
-                        "style-loader",
-                        "css-loader",
-                        "sass-loader"
-                    ]
+                use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'sass-loader'
+                ]
             }
         ]
     },
